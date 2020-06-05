@@ -1,17 +1,18 @@
 import React from "react";
 import store from "./store";
-import * as action from "./actiontypes";
+import * as actions from "./actionTypes";
+import { bugAdded } from "./actions";
 
 function App() {
   // define subscribe function
   const unsubscribe = store.subscribe(() => {
     console.log("store Changed! ", store.getState());
   });
-  store.dispatch({
-    type: action.BUG_ADDED,
-    payload: { description: "first Bug" },
-  });
-  store.dispatch({ type: action.BUG_REMOVED, payload: { id: 2 } });
+
+  // dispatching and passing a function will take care of the work
+  store.dispatch(bugAdded("this is my description"));
+
+  store.dispatch({ type: actions.BUG_REMOVED, payload: { id: 2 } });
   unsubscribe();
   return (
     <div className="App">
