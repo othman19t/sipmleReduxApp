@@ -1,7 +1,7 @@
 import React from "react";
 import store from "./store";
 import * as actions from "./actionTypes";
-import { bugAdded } from "./actions";
+import { bugAdded, bugRemoved } from "./actions";
 
 function App() {
   // define subscribe function
@@ -12,7 +12,9 @@ function App() {
   // dispatching and passing a function will take care of the work
   store.dispatch(bugAdded("this is my description"));
 
-  store.dispatch({ type: actions.BUG_REMOVED, payload: { id: 2 } });
+  // dispatching and passing a function will take care of the work
+  store.dispatch(bugRemoved(2));
+
   unsubscribe();
   return (
     <div className="App">
