@@ -1,18 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-const UserPost = () => {
-  return (
-    <div>
-      <p>this is post users</p>
-    </div>
-  );
-};
+class UserPost extends Component {
+  GetListOfPosts = () => {
+    return this.props.userReducer.map((el) => {
+      return <li key={el.posts}>{el.posts}</li>;
+    });
+  };
+
+  render() {
+    return <div>{this.GetListOfPosts()}</div>;
+  }
+}
 
 function mapStateToProps(state) {
   return {
-    userPost: state.userReducer,
+    userReducer: state.userReducer,
   };
 }
 export default connect(mapStateToProps)(UserPost);
