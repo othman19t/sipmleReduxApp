@@ -1,12 +1,12 @@
-import React from "react";
-import { createStore, combineReducers } from "redux";
-import * as Reducers from "./reducer";
+// import React from "react";
+// import { createStore, combineReducers } from "redux";
+// import * as Reducers from "./reducer";
 
-const store = createStore(
-  combineReducers({
-    userReducer: Reducers.userReducer,
-    BugReducer: Reducers.BugReducer,
-  })
-);
+// const store = createStore(
+//   combineReducers({
+//     userReducer: Reducers.userReducer,
+//     BugReducer: Reducers.BugReducer,
+//   })
+// );
 
-export default store;
+// export default store;
