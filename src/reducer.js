@@ -1,6 +1,6 @@
 import * as actions from "./actionTypes";
 let lastId = 1;
-const Reducer = (state = [], action) => {
+export const BugReducer = (state = [], action) => {
   switch (action.type) {
     case actions.BUG_ADDED:
       return [
@@ -24,4 +24,12 @@ const Reducer = (state = [], action) => {
       return state;
   }
 };
-export default Reducer;
+
+export const userReducer = (state = [], action) => {
+  switch (action.type) {
+    case actions.ADD_POST:
+      return [...state, action.post];
+    default:
+      return state;
+  }
+};

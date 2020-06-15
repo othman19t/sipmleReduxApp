@@ -16,3 +16,8 @@ export const bugResolved = (id) => ({
   type: actions.BUG_RESOLVED,
   payload: { id },
 });
+
+export const addPost = (post) => ({
+  type: actions.ADD_POST,
+  post,
+});

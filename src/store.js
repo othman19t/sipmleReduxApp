@@ -1,7 +1,12 @@
 import React from "react";
-import { createStore } from "redux";
-import reducer from "./reducer";
+import { createStore, combineReducers } from "redux";
+import * as Reducers from "./reducer";
 
-const store = createStore(reducer);
+const store = createStore(
+  combineReducers({
+    userReducer: Reducers.userReducer,
+    BugReducer: Reducers.BugReducer,
+  })
+);
 
 export default store;
