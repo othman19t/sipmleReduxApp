@@ -3,6 +3,8 @@ import store from "./store";
 import * as actions from "./actionTypes";
 import { bugAdded, bugRemoved, bugResolved, addPost } from "./actions";
 
+import UserPosts from "./userPost";
+
 function App() {
   // // define subscribe function
   // const unsubscribe = store.subscribe(() => {
@@ -25,6 +27,7 @@ function App() {
       <h1>hello world</h1>
       <div>
         <h2>users Post:</h2>
+        <UserPosts />
       </div>
       <div>
         <h2>user pugs:</h2>
