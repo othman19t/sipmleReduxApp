@@ -12,6 +12,8 @@ function App() {
   // dispatching and passing a function will take care of the work
   store.dispatch(bugAdded("this is my description"));
 
+  
+
   // resolving bugs
   store.dispatch(bugResolved(2));
 
